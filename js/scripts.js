@@ -176,7 +176,7 @@ async function loadText(path)
 
 async function loadJSON(path)
 {
-    const res = await fetch(path)
+    const res = await fetch(path, { cache: 'no-store' })
     if (!res.ok)
     {
         throw Error('Failed to load ' + path + ' (open this page via http://localhost, not as a file)')
